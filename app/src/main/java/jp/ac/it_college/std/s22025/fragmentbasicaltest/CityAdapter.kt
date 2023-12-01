@@ -38,12 +38,26 @@ class CityAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //city_row.xml内のcityNameというtextビューに、指定されたpositionに対応するデータの名前をバインド
-//        holder.binding.cityName.text = data[position].name
+//        holder.binding.cityName.apply{
+//        text = data[position].name
+//        }
+
         val city = data[position]
         holder.binding.apply {
             cityName.text = city.name
             //クリックされたらcallbackを呼び出して、city(data[position])を受け取る
-            root.setOnClickListener { callback(city) }
+            root.setOnClickListener {
+                callback(city)
+            }
         }
+
+        // ViewHolder内のViewに都市の情報を表示
+//        holder.binding.cityName.apply {
+//            text = cityList[position].name
+//            setOnClickListener {
+//                // コールバック関数を呼び出し、選択された都市の情報を渡す
+//                callback(cityList[position])
+//            }
+//        }
     }
 }

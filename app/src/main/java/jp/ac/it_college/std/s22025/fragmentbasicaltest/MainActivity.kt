@@ -37,7 +37,17 @@ class MainActivity : AppCompatActivity() {
             replace(
                 R.id.fragmentMainContainer,WeatherResultFragment::class.java,
                 bundleOf(
-                    ARG_NAME to bundle.getString(RESULT_NAME, "")
+                    ARG_NAME to bundle.getString(GAINED_CITY_NAME, ""),
+                    ARG_CITY_DATETEXT to bundle.getString(GAINED_CITY_DATETEXT, ""),
+                    ARG_CITY_WEATHER_DESC to bundle.getString(GAINED_CITY_WEATHER_DESC, ""),
+                    ARG_TEMP to bundle.getDouble(GAINED_TEMP, 0.0),
+                    ARG_FEELS_LIKE to bundle.getDouble(GAINED_FEELS_LIKE, 0.0),
+                    ARG_PRESS to bundle.getDouble(GAINED_PRESS, 0.0),
+                    ARG_HUMIDITY to bundle.getDouble(GAINED_HUMIDITY, 0.0),
+                    ARG_POP to bundle.getDouble(GAINED_POP, 0.0),
+                    ARG_WIND_SPEED to bundle.getDouble(GAINED_WIND_SPEED, 0.0),
+                    ARG_WIND_MAX to bundle.getDouble(GAINED_WIND_MAX, 0.0),
+                    ARG_WIND_DEG to bundle.getDouble(GAINED_WIND_DEG, 0.0)
                 )
             )
         }
