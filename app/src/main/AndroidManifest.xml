@@ -4,6 +4,12 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!--    gps使うとき   -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!--    gps以外のソースによる位置情報取得のとき   -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
 
     <application
         android:allowBackup="true"
