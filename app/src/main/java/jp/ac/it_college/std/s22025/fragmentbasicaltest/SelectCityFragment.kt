@@ -74,6 +74,7 @@ internal const val GAINED_POP = "pop"
 internal const val GAINED_WIND_SPEED = "windSpeed"
 internal const val GAINED_WIND_MAX = "windMax"
 internal const val GAINED_WIND_DEG = "windDeg"
+internal const val GAINED_ICON = "icon"
 
 
 //多分ここの内部でrvCityListにcity_row.xml内のcityNameをアプラいしてる
@@ -204,7 +205,8 @@ class SelectCityFragment : Fragment() {
                     GAINED_POP to result.hourlyList[0].rainPer*100,
                     GAINED_WIND_SPEED to result.hourlyList[0].wind.speed,
                     GAINED_WIND_MAX to result.hourlyList[0].wind.gust,
-                    GAINED_WIND_DEG to result.hourlyList[0].wind.windDegrees
+                    GAINED_WIND_DEG to result.hourlyList[0].wind.windDegrees,
+                    GAINED_ICON to result.hourlyList[0].weather[0].icon
                 )
             )
 
@@ -241,18 +243,16 @@ class SelectCityFragment : Fragment() {
                     GAINED_POP to result.hourlyList[0].rainPer*100,
                     GAINED_WIND_SPEED to result.hourlyList[0].wind.speed,
                     GAINED_WIND_MAX to result.hourlyList[0].wind.gust,
-                    GAINED_WIND_DEG to result.hourlyList[0].wind.windDegrees
+                    GAINED_WIND_DEG to result.hourlyList[0].wind.windDegrees,
+                    GAINED_ICON to result.hourlyList[0].weather[0].icon
                     )
             )
-            Log.d("TAG", "DateText: ${result.hourlyList[0].dateText}")
-
+            // 天気アイコンのURL
+//            val iconUrl = "$IMAGE_URL${result.hourlyList[0].weather[0].icon}$IMAGE_FORMAT"
 
 //
-//                // 天気アイコンのURL
-//                val iconUrl = "$IMAGE_URL${hourlyList[0].weather[0].icon}$IMAGE_FORMAT"
-//
-//                // Glideを使って画像をロードしてImageViewに表示
-//                Glide.with(this@MainActivity)
+                // Glideを使って画像をロードしてImageViewに表示
+//                Glide.with(this@SelectCityFragment)
 //                    .load(iconUrl)
 //                    .into(binding.ivWeatherIcon)
 //            }

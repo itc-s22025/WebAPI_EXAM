@@ -47,7 +47,8 @@ class MainActivity : AppCompatActivity() {
                     ARG_POP to bundle.getDouble(GAINED_POP, 0.0),
                     ARG_WIND_SPEED to bundle.getDouble(GAINED_WIND_SPEED, 0.0),
                     ARG_WIND_MAX to bundle.getDouble(GAINED_WIND_MAX, 0.0),
-                    ARG_WIND_DEG to bundle.getDouble(GAINED_WIND_DEG, 0.0)
+                    ARG_WIND_DEG to bundle.getDouble(GAINED_WIND_DEG, 0.0),
+                    ARG_ICON to bundle.getString(GAINED_ICON, "")
                 )
             )
         }

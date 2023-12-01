@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.setFragmentResultListener
+import com.bumptech.glide.Glide
 import jp.ac.it_college.std.s22025.fragmentbasicaltest.databinding.FragmentWeatherResultBinding
 
 //internal -> 同じモジュール内からのみアクセス可能ですよ
@@ -20,6 +21,7 @@ internal const val ARG_POP = "pop"
 internal const val ARG_WIND_SPEED = "windSpeed"
 internal const val ARG_WIND_MAX = "windMax"
 internal const val ARG_WIND_DEG = "windDeg"
+internal const val ARG_ICON = "icon"
 
 
 class WeatherResultFragment : Fragment() {
@@ -53,6 +55,7 @@ class WeatherResultFragment : Fragment() {
         val windSpeed = arguments?.getDouble(ARG_WIND_SPEED) ?: 0
         val windMaxSpeed = arguments?.getDouble(ARG_WIND_MAX) ?: 0
         val windDeg = arguments?.getDouble(ARG_WIND_DEG) ?: 0
+        val icon = arguments?.getString(ARG_ICON) ?: ""
 
 
         //ビューに値をセット
@@ -67,6 +70,13 @@ class WeatherResultFragment : Fragment() {
         binding.tvWindSpeed.text = "%,f".format(windSpeed)
         binding.tvMaxWindSpeed.text = "%,f".format(windMaxSpeed)
         binding.tvWindDeg.text = "%,f".format(windDeg)
+
+        val imageURL = "https://openweathermap.org/img/wn/${icon}.png"
+        // Glideを使って画像をロードしてImageViewに表示
+                Glide.with(this)
+                    .load(imageURL)
+                    .into(binding.ivWeatherIcon)
+
 
 
         // ボタンのイベントリスナを設定
