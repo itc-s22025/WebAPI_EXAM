@@ -7,7 +7,11 @@ import jp.ac.it_college.std.s22025.fragmentbasicaltest.databinding.CityRowBindin
 
 //つまりこのCityAdapterはrvCityListにcity_row.xmlのcityNameを表示させるためのアダプターってこと
 //ていうかもしかしたらcity_row.xmlとCityDataを紐付けているやつかも
-class CityAdapter(private val data: List<City>) :
+class CityAdapter(
+    private val data: List<City>,
+    //City型の引数を受取って、何も返さない
+    private val callback: (City) -> Unit
+    ) :
     //RecyclerView.Adapter :リスト形式のデータを効率に表示するためのアダプタ
     RecyclerView.Adapter<CityAdapter.ViewHolder>() {
 
@@ -34,6 +38,12 @@ class CityAdapter(private val data: List<City>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //city_row.xml内のcityNameというtextビューに、指定されたpositionに対応するデータの名前をバインド
-        holder.binding.cityName.text = data[position].name
+//        holder.binding.cityName.text = data[position].name
+        val city = data[position]
+        holder.binding.apply {
+            cityName.text = city.name
+            //クリックされたらcallbackを呼び出して、city(data[position])を受け取る
+            root.setOnClickListener { callback(city) }
+        }
     }
 }
