@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ベーシック</string>
+    <string name="app_name">WeatherApiExam</string>
     <string name="tv_winfo_title">天気詳細</string>
     <string name="bt_search">現在地から取得</string>
     <string name="tv_telop">の天気</string>
@@ -8,11 +8,17 @@
     <string name="tv_feels_like">体感気温：</string>
     <string name="tv_pressure">気圧：</string>
     <string name="tv_humidity">湿度：</string>
-    <string name="tv_pop">降水確率</string>
+    <string name="tv_pop">降水確率：</string>
     <string name="tv_wind_speed">風速：</string>
     <string name="tv_wind_max">瞬間風速：</string>
     <string name="tv_wind_deg">風向：</string>
 
     <string name="bt_back">前の画面に戻る</string>
+    <string name="tv_top_msg">お天気情報を取得したい場所を選択してください：</string>
+    <string name="tv_temp_unit">度</string>
+    <string name="tv_pressure_unit">Pa</string>
+    <string name="tv_percent">％</string>
+    <string name="tv_m_s">m/s</string>
+    <string name="tv_wind_deg_unit">度方向より</string>
 
 </resources>
