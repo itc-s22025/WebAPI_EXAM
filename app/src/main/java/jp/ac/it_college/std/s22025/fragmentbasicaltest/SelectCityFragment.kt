@@ -17,6 +17,12 @@ internal const val REQUEST_SELECTED_CITY = "selectedCity"
 internal const val RESULT_NAME = "cityName"
 
 
+
+/** Fragment Result API を通じて Activity へデータを返すためのイベント名 */
+/* タブレットで用いる*/
+internal const val REQUEST_BACK_CITY = "backCity"
+
+
 //多分ここの内部でrvCityListにcity_row.xml内のcityNameをアプラいしてる
 class SelectCityFragment : Fragment() {
     // Bindingクラスのインスタンスを入れておくプロパティ(Nullable)
