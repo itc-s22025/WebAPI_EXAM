@@ -27,7 +27,7 @@ class CityAdapter(
         // 第一引数にはLayoutInflater
         // 第二引数にはレイアウトの親であるViewGroup
         // 第三引数にはViewがアタッチされるかどうかを示すboolean値が渡される
-        // これにより、CityRowBindingが生成されたときに、その中のrootプロパティがアタッチされていないViewオブジェクトを得ることができます。
+        // これにより、CityRowBindingが生成されたときに、その中のrootプロパティがアタッチされていないViewオブジェクトを得ることができる
 
         //LayoutInflater.from(parent.context) -> .xmlファイルからViewオブジェクトを作成するためのLayoutInflater を親のContextから取得
         ViewHolder(CityRowBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -51,13 +51,5 @@ class CityAdapter(
             }
         }
 
-        // ViewHolder内のViewに都市の情報を表示
-//        holder.binding.cityName.apply {
-//            text = cityList[position].name
-//            setOnClickListener {
-//                // コールバック関数を呼び出し、選択された都市の情報を渡す
-//                callback(cityList[position])
-//            }
-//        }
     }
 }
